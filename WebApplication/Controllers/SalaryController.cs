@@ -79,7 +79,7 @@ namespace WebApplication.Controllers
         public async Task<IActionResult> UpdateSalaryAsync([FromRoute] int id, [FromBody] SalaryModel salary)
         {
             await _salaryManager.UpdateEmployeeSalaryByIdAsync(id, salary);
-            return Ok("Salary Updated...");
+            return Ok(new { msg = "Salary Updated..." });
         }
 
         [HttpDelete("{id}")]
